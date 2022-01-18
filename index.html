@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./main.js" defer></script>
+</head>
+<body>
+    <div class="hero">
+        <h1>Grid & Flex w CSS’ie</h1>
+    </div>
+    <div class="grid__intro container">
+        <h2>Jak zrobić prosty układ z 3 kolumnami za pomocą grid’a?</h2>
+        <div class="grid__code">
+            <div class="grid__code__html">
+                <pre>
+<span class="acc--orange">&ltdiv</span> class=<span class="acc--lime">"parent-div"</span><span class="acc--orange">></span>
+    &ltdiv>{content}&lt/div>
+    &ltdiv>{content}&lt/div>
+    &ltdiv>{content}&lt/div>
+<span class="acc--orange">&lt/div></span>
+                </pre>
+            </div>
+            <div class="grid__code__css">
+<pre>
+<span class="acc--orange">.parent-div {</span>
+    display: <span class="acc--lime">grid</span>;
+    grid-template-columns: <span class="acc--lime">1fr 1fr 1fr</span>;
+    gap: <span class="acc--lime">2em</span>;
+<span class="acc--orange">}</span>
+</pre>
+                <a onClick="gridChange()" href="#!" class="btn__a">
+                    <div class="btn__div">
+                        <p>Przełącz CSS</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="grid__demo without">
+            <div class="acc__div--orange"></div>
+            <div class="acc__div--lime"></div>
+            <div class="acc__div--orange"></div>
+        </div>
+    </div>
+
+    <div class="flex__intro container">
+        <h2>Jak zrobić prosty układ z 3 kolumnami za pomocą grid’a?</h2>
+        <div class="flex__code">
+            <div class="flex__code__html">
+                <pre>
+<span class="acc--orange">&ltdiv</span> class=<span class="acc--lime">"parent-div"</span><span class="acc--orange">></span>
+    &ltdiv>{content}&lt/div>
+    &ltdiv>{content}&lt/div>
+    &ltdiv>{content}&lt/div>
+<span class="acc--orange">&lt/div></span>
+                </pre>
+            </div>
+            <div class="flex__code__css">
+<pre>
+<span class="acc--orange">.parent-div {</span>
+    display: <span class="acc--lime">flex</span>;
+    justify-content: <span class="acc--lime">space-between</span>;
+    gap: <span class="acc--lime">2em</span>;
+<span class="acc--orange">}</span>
+</pre>
+                <a onClick="flexChange()" href="#!" class="btn__a">
+                    <div class="btn__div">
+                        <p>Przełącz CSS</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="flex__demo without">
+            <div class="acc__div--orange"></div>
+            <div class="acc__div--lime"></div>
+            <div class="acc__div--orange"></div>
+        </div>
+    </div>
+    <div class="lament container">
+        <h2>Dlaczego nie używamy w CSS’ach “float”?</h2>
+        <p>Cóż to bardzo proste float był używany do tworzenia layoutów przed pojawieniem się zarówno grid’a jak i flexboxa. Jednak nigdy nie był do tego przeznaczony używano go jako “hack” przy tworzeniu stron.</p>
+        <p>Jego założeniem było umożliwienie ułożenia tekstu na około obrazka który wstawiliśmy. Ze względu na responsywność strony internetowej nie używamy znacznika float chyba, że w celu do którego został przeznaczony.</p>
+        <p>Z własnego doświadczenia nie polecam nikomu utrzymywania strony która wykorzystuje znacznik float do całego układu strony. Jest to po prostu niewyobrażalnie trudne. Używając flexboxa czy grida nie musimy martwić się o stałe wartości przy szerokości itd. technologia zrobi to za nas. Jeżeli chcielibyśmy do układu, który używa float’a dodać kolejną kolumnę musimy ustalać wartości dla każdego z elementów children od nowa inaczej wszystko się rozjedzie, flex z drugiej strony sam ustali sobie szerokość dla każdego z elementów, a grid po prostu przerzuci nowy element do następnego wiersza (Jest to np. używane przez Google w serwisie YouTube do wyświetlania filmów na stronie głównej).</p>
+    </div>
+    <div class="sources container">
+        <h3>Źródła do nauki obu technologi:</h3>
+        <div class="sources__divs flex">
+            <div>
+                <h4>Grid:</h4>
+                <a href="https://www.youtube.com/watch?v=rg7Fvvl3taU" target="_blank">https://www.youtube.com/watch?v=rg7Fvvl3taU</a>
+                <a href="https://css-tricks.com/snippets/css/complete-guide-grid/" target="_blank">https://css-tricks.com/snippets/css/complete-guide-grid/</a>
+            </div>
+            <div>
+                <h4>Flex:</h4>
+                <a href="https://www.youtube.com/watch?v=u044iM9xsWU" target="_blank">https://www.youtube.com/watch?v=u044iM9xsWU</a>
+                <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">https://css-tricks.com/snippets/css/a-guide-to-flexbox/</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
